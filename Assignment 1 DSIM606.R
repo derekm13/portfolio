@@ -7,11 +7,11 @@ library(class)
 
 loan <- read.csv("D:/derek/Documents/LoanStats3a_securev1.csv")
 
-Status<-as.data.frame(loan$loan_status)
+table(loan$loan_status)
 loan <- loan%>%filter(!loan$loan_status=='')
 loan$status <- ifelse(loan$loan_status == "Current" | 
                         loan$loan_status == "Fully Paid" |
-                        loan$loan_status == "Does not meet the credit policy.  Status:Fully Paid","good","bad")
+                        loan$loan_status == "Does not meet the credit policy. Status:Fully Paid","good","bad")
 table(loan$status)
 loan$int_rate <- as.numeric(gsub("%","", loan$int_rate))
 ggplot(loan, aes(x=status,y=int_rate)) + geom_boxplot()
