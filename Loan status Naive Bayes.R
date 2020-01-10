@@ -7,7 +7,7 @@ library(e1071)
 library(caret)
 library(randomForest)
 
-loan <- read.csv("D:/derek/Documents/LoanStats3a_securev1.csv")
+loan <- read.csv("D:/derek/Documents/Loan_status.csv")
 
 loan <- loan%>%filter(!loan_status=="")
 loan$status <- ifelse(loan$loan_status=="Current" |

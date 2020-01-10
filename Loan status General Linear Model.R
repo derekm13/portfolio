@@ -5,7 +5,7 @@ library(dplyr)
 library(ggplot2)
 library(class)
 
-loan <- read.csv("D:/derek/Documents/LoanStats3a_securev1.csv")
+loan <- read.csv("D:/derek/Documents/Loan_status.csv")
 
 table(loan$loan_status)
 loan <- loan%>%filter(!loan$loan_status=='')
